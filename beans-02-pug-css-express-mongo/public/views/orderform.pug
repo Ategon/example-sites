@@ -1,0 +1,30 @@
+head
+	title Restaurant
+	link(rel="stylesheet" href="/css/main.css" type='text/css')
+	style.
+		.column {
+		float: left;
+		}
+		.left{
+		width: 10%;
+		}
+		.right {
+		width: 25%;
+		}
+		.middle {
+		width: 65%;
+		}
+		
+body(onload="init()")
+	include ./header
+	
+	select#restaurant-select
+	br
+	br
+	
+	#info
+	#main
+		#left.column.left
+		#middle.column.middle
+		#right.column.right
+	script(src='../js/orderform.js')

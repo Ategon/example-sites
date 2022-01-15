@@ -1,0 +1,19 @@
+doctype html
+html(lang='en')
+	head
+		script(src='../js/script.js', defer='')
+		title Restaurant Menus
+		link(rel="stylesheet" href="css/main.css" type='text/css')
+	body
+		main
+			include ./header
+			
+			form(id="newRestaurantForm")
+				label(type="text" for="name") Restaurant Name:
+				input(type="text" id="name" name="name")
+				label(type="number" for="delivery") Delivery fee:
+				input(type="number" id="delivery" name="delivery")
+				label(type="number" for="minimum") Minimum order:
+				input(type="number" id="minimum" name="minimum")
+				
+				button(type="button" onclick="restaurantAdd()") Add restaurant

@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+	head
+		title Restaurant
+		link(rel="stylesheet" href="css/main.css" type='text/css')
+		script(src='../js/script.js', defer='')
+body
+	include ./header
+	
+	main
+		#login
+			form
+				label(for="loginName") Username
+				input(type="text" id="loginName" name="loginName" value="")
+				label(for="loginPassword") Password
+				input(type="password" id="loginPassword" name="loginPassword" value="")
+				
+				button(type="button" onclick="login()") Login

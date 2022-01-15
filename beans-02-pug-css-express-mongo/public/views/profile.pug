@@ -1,0 +1,38 @@
+doctype html
+html(lang="en")
+	head
+		title Restaurant
+		link(rel="stylesheet" href="../css/main.css" type='text/css')
+body
+	include ./header
+	
+	main
+		#profile
+			h1 #{user.username}
+			
+			if loggedUser
+				br
+				form
+					h3 Privacy
+					
+					if user.privacy
+						label(for="public") Public
+						input(type="radio" id="public" name="privacy" value="public")
+						label(for="private") Private
+						input(type="radio" id="private" name="privacy" value="private" checked)
+					else
+						label(for="public") Public
+						input(type="radio" id="public" name="privacy" value="public" checked)
+						label(for="private") Private
+						input(type="radio" id="private" name="privacy" value="private")
+					
+					button(type="button" onclick="saveSettings()") Save
+					
+			h3 Orders
+				if user.orders
+					ul
+						each val, index in user.orders
+							li #[a(href="/orders/" + index) #{index}: #{val.restaurantName}]
+			if !user.orders
+				p Nothing ordered yet
+						

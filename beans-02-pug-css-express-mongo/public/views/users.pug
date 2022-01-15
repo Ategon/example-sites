@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+	head
+		title Restaurant
+		link(rel="stylesheet" href="css/main.css" type='text/css')
+body
+	include ./header
+	
+	main
+		#users
+			h1 List of users:
+			
+			each user in users ? users : []
+				a(href="/users/" + user._id) #{user.username}

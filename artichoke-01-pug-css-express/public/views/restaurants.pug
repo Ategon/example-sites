@@ -1,0 +1,13 @@
+doctype html
+html(lang='en')
+	head
+		title Restaurant Menus
+		link(rel="stylesheet" href="css/main.css" type='text/css')
+	body
+		main
+			include ./header
+			
+			#restaurants
+				h1 Restaurants
+				each restaurant in restaurants
+					li #[a(href=`/restaurants/${restaurant.id}`) #{restaurant.name}]

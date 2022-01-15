@@ -1,0 +1,34 @@
+nav
+	script(src='../js/script.js', defer='')
+	
+	if !session.loggedin
+		ul
+			li
+				a(href="/") Home
+				|
+			li
+				a(href="/users") Users
+				|
+			li
+				a(href="/registration") Registration
+				|
+			li
+				a(href="/login") Log in
+				|
+	else
+		ul
+			li
+				a(href="/") Home
+				|
+			li
+				a(href="/users") Users
+				|
+			li
+				a(href="/order") Order
+				|
+			li
+				a(onclick="profile()") Profile
+				|
+			li
+				a(onclick="logout()") Log out
+				|

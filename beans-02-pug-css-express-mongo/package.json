@@ -1,0 +1,19 @@
+{
+  "name": "assignment4",
+  "version": "1.0.0",
+  "description": "Benjamin Barbeau\r Login system & Mongo",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-mongodb-session": "^3.1.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "mongodb": "^4.2.1",
+    "pug": "^3.0.2"
+  }
+}

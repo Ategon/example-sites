@@ -1,0 +1,60 @@
+doctype html
+html(lang='en')
+	head
+		script(src='../js/script.js', defer='')
+		title Restaurant Menus
+		link(rel="stylesheet" href="../css/main.css" type='text/css')
+	body(onload="getRestaurant()")
+		main
+			form
+				#upper
+					include ./header
+					div(id="restaurantDataForm")
+						label(type="text" for="name") Restaurant Name
+						input(type="text" id="name" name="name" value=restaurant.name) 
+						label(type="text" for="minimum") Minimum Order ($)
+						input(type="text" id="minimum" name="minimum" value=restaurant.min_order.toFixed(2)) 
+						label(type="text" for="delivery") Delivery Fee ($)
+						input(type="text" id="delivery" name="delivery" value=restaurant.delivery_fee.toFixed(2)) 
+					
+				#lower
+					#lowerleft
+						div
+							h1 Table of Contents
+						each val, key in restaurant.menu
+							h2 #[a(href="#" + key) #{key}]
+					#lowercenter
+						each val, key in restaurant.menu
+							div(class="menuCategoryDiv")
+								h2(id=key) #{key}
+								each val2, key2 in val
+									div(class="itemDiv")
+										h3 #{val2.name}
+										p #{val2.description}
+										p Price: $#{val2.price.toFixed(2)}
+								
+									
+					#lowerright
+						form
+							h3 New Category
+							label(type="text" for="name2") Category Name
+							input(type="text" id="name2" name="name2" value="") 
+							button(type="button" onclick="categoryAdd()") Add category
+							
+						form
+							
+							h3 New Item
+							label(type="text" for="itemName") Item Name
+							input(type="text" id="itemName" name="itemName" value="")
+							label(type="text" for="itemDescription") Item Description
+							input(type="text" id="itemDescription" name="itemDescription" value="") 
+							label(type="text" for="itemPrice") Item Price
+							input(type="text" id="itemPrice" name="itemPrice" value="")
+							label(type="text" for="itemCategory") Item Category
+							select(id="itemCategory" name="itemCategory") 
+							button(type="button" onclick="itemAdd()") Add item
+							
+						button(type="button" onclick="saveItems()") Save
+						
+						p Restaurant Id
+						p(id="resId") #{restaurant.id}

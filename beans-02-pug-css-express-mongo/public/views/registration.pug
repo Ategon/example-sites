@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+	head
+		title Restaurant
+		link(rel="stylesheet" href="css/main.css" type='text/css')
+		script(src='../js/script.js', defer='')
+body
+	include ./header
+	
+	main
+		#registration
+			form
+				label(for="registerName") Username
+				input(type="text" id="registerName" name="registerName" value="")
+				label(for="registerPassword") Password
+				input(type="password" id="registerPassword" name="registerPassword" value="")
+				
+				button(type="button" onclick="register()") Register

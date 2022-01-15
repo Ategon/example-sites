@@ -1,0 +1,21 @@
+head
+	title Restaurant
+	link(rel="stylesheet" href="/css/main.css" type='text/css')
+		
+body
+	include ./header
+	
+	#summary
+		h3 Data
+		p User: #{user.username}
+		p Restaurant: #{order.restaurantName}
+		p Subtotal: $#{order.subtotal.toFixed(2)}
+		p Tax: $#{order.tax.toFixed(2)}
+		p Delivery fee: $#{order.fee.toFixed(2)}
+		p Total: $#{order.total.toFixed(2)}
+		br
+		
+		h3 Items
+		ul
+			each val, index in order.order
+				li #{val.name}: #{val.quantity}
